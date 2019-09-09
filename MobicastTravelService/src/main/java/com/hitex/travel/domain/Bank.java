@@ -6,6 +6,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import lombok.Data;
 
+import java.util.Date;
+
 /**
  *
  * @author MaiPH
@@ -20,9 +22,13 @@ public class Bank extends Domain {
     @Id
     @Column(name ="bank_id")
     private int bankId;
-     
-    private String name;
 
+    @Column(name ="bank_name")
+    private String bankName;
 
-   
+    @Column(name ="description")
+    private String description;
+
+    @Column(name ="create_date")
+    private Date createDate;
 }
