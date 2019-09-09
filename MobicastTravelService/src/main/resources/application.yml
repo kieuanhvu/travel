@@ -1,0 +1,57 @@
+server:
+  port: 9151
+
+application:
+  database:
+    driverName: org.postgresql.Driver
+    read:  
+      url: jdbc:postgresql://123.31.41.16:5432/dbtravel
+      username: usertravel
+      password: travel123
+      IdleConnectionTestPeriodInMinutes: 10
+      IdleMaxAgeInMinutes: 40
+      PoolAvailabilityThreshold: 10
+      MaxConnectionsPerPartition: 100
+      MinConnectionsPerPartition: 10
+      PartitionCount: 3
+      AcquireIncrement: 5
+      StatementsCacheSize: 100
+      ReleaseHelperThreads: 3
+      ConnectionTestStatement: SELECT count(*)  FROM DUAL
+    write:
+      url: jdbc:postgresql://123.31.41.16:5432/dbtravel
+      username: usertravel
+      password: travel123
+      IdleConnectionTestPeriodInMinutes: 10
+      IdleMaxAgeInMinutes: 40 
+      PoolAvailabilityThreshold: 10
+      MaxConnectionsPerPartition: 100
+      MinConnectionsPerPartition: 10
+      PartitionCount: 3
+      AcquireIncrement: 5
+      StatementsCacheSize: 100
+      ReleaseHelperThreads: 3
+      ConnectionTestStatement: SELECT count(*)  FROM DUAL
+  redis:  
+    senitel: 127.0.0.1:9125,127.0.0.1:9123
+    masterName: mymaster
+    authen: 123456
+    maxConection: 1000
+logging:
+  level:
+    org.springframework: ERROR
+    com.hitex.commissionservice: DEBUG
+    org.hibernate.engine.jdbc.env.internal: ERROR
+  file: /opt/log/CommissionService.log
+spring:
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: create
+    batch:
+      initialize-schema: always  
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
