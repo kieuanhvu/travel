@@ -13,5 +13,6 @@
         <module>MobicastUtil</module>
         <module>MobicastTravelService</module>
         <module>MobicastLocationService</module>
+        <module>MobicastTourService</module>
     </modules>
 </project>
