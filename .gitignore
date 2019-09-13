@@ -64,3 +64,4 @@ version.json
 MobicastTravelService/target/*
 MobicastUtil/target/*
 MobicastLocationService/target/*
+MobicastTourService/target/*
